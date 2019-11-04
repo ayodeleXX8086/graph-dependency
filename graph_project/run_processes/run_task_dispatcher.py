@@ -2,7 +2,7 @@ from graph_project.redis_client import Redis
 from functools import reduce
 import datetime
 import os
-from graph_project.task import TaskGenerator
+from graph_project.task import TaskGenerator,Task
 
 
 class AbstractTaskDispatcherExcepiton(Exception):
@@ -66,7 +66,7 @@ class GraphAnalyzer:
     def __init__(self,tasks):
         self.tasks = tasks
 
-    def build_dependency(self):
+    def build_dependency(self) -> dict:
         '''This will be the dependency of the list to become a map{task:[]}
           example  [Task(3,tasks=[Task(1),Task(2)]),Task(4,tasks=[Task(7),Task(8)]]
             {
@@ -80,7 +80,13 @@ class GraphAnalyzer:
         dependency = {k:v for k,v in dependency.items() if v}
         return dependency
 
-    def _dfs(self,task,map):
+    def _dfs( self,task:Task,map:dict ):
+        '''
+        Traversing through the task list
+        :param task:
+        :param map:
+        :return:
+        '''
         map[task]=set()#to avoid cyclic dependency
         for v in task.tasks:
             map[task].add(v)
