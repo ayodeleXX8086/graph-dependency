@@ -10,4 +10,6 @@ What happens is that it topologically sorts the graph in this manner [1, 2, 3, 4
 Task 5 will not execute until Task 1 and Task 2,Task 6 will not get executed until Task 1,2,3,4 are executed and Task 7 will not get executed until Task 1,2,3,4,5,6. Meanwhile Task 1,2,3,4 are indenpendent this tasks will be parallely.
 
 # Running the application
+install redis server
+pip -r requirements.txt
 python main.py
