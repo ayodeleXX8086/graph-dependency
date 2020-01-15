@@ -69,7 +69,7 @@ class TaskGenerator(object):
         """ This returns a list of tasks
         """
         tasks_level_1 = [Task(1), Task(2), Task(3), Task(4)]
-        tasks_level_2 = [Task(5, tasks=tasks_level_1[0:2]), Task(6, tasks=tasks_level_1)] # Ask if this a bug
+        tasks_level_2 = [Task(5, tasks=tasks_level_1[0:2]), Task(6, tasks=tasks_level_1)]
         tasks_level_3 = [Task(7, tasks=tasks_level_1 + tasks_level_2)]
 
         return tasks_level_1 + tasks_level_2 + tasks_level_3
