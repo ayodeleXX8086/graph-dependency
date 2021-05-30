@@ -1,5 +1,5 @@
 # graph-dependency
-This program manages tasks in a graph representation and executes the task by topologically sorting task based on their ordering, each dependant task are executed parallelly. This program can be used for managing large complex task, can be used as a asynchronous mode of task management.
+This program manages tasks in a graph representation and executes the task by topologically sorting task based on their ordering, each dependant task are executed parallelly. This program shows an example of managing large complex task that could be used as an asynchronous mode for task management classic example of task management is Luigi or Airflow.
 
 # Example
 We are representing each of the task for now as an Integer, this could be an reference to a trigger.
